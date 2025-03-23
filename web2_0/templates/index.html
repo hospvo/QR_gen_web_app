@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h2>QR Code Generator</h2>
+
+    <form id="qrForm" enctype="multipart/form-data">
+        <input type="text" name="url" id="url" placeholder="Enter URL" required>
+        <input type="file" name="logo" id="logo">
+        <input type="number" name="size" id="size" placeholder="Size in px (e.g., 300)" required min="100" max="1000">
+        <button type="submit">Generate QR Code</button>
+    </form>
+
+    <div id="result">
+        <img id="qrPreview" style="display:none;">
+        <br>
+        <a id="downloadBtn" href="{{ url_for('download_qr') }}" download>
+            <button style="display:none;">Download QR Code</button>
+        </a>
+    </div>
+    <script>
+        document.getElementById("qrForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let formData = new FormData(this);
+            fetch("/generate_qr", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.blob())
+                .then(blob => {
+                    let img = document.getElementById("qrPreview");
+                    img.src = URL.createObjectURL(blob);
+                    img.style.display = "block";
+
+                    // Show download button
+                    document.getElementById("downloadBtn").style.display = "inline";
+                    document.getElementById("downloadBtn").querySelector("button").style.display = "inline";
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+</body>
+
+</html>

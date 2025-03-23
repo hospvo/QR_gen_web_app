@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f4f4f4;
+}
+
+/* Form Styles */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 300px;
+}
+
+/* Styl pro všechna vstupní pole */
+input[type="text"], 
+input[type="file"], 
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Stejná velikost textu */
+    box-sizing: border-box; /* Zajistí, že padding nezvětší element */
+}
+
+/* Button Styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Align QR Preview */
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* QR Image */
+#qrPreview {
+    margin-top: 10px;
+    border: 5px solid #4CAF50;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    width: 300px;  /* Always 300px preview */
+    height: 300px;
+}
+
+
+/* Center Everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#qrForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zarovná vstupy na střed */
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    margin: 0 auto; /* Posune formulář na střed */
+}
+
+
+
