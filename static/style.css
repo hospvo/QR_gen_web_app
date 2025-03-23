@@ -86,5 +86,16 @@ button:hover {
     margin: 0 auto; /* Posune formulář na střed */
 }
 
+.powered-by {
+    position: fixed;  /* Přilepeno k rohu */
+    bottom: 10px;     /* Vzdálenost od spodního okraje */
+    right: 10px;      /* Vzdálenost od pravého okraje */
+    background: rgba(0, 0, 0, 0.7); /* Poloprůhledné pozadí */
+    color: white;      /* Bílý text */
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
 
 
